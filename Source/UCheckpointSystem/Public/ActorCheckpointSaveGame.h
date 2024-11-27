@@ -5,6 +5,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "WorldState.h"
 #include "GameFramework/SaveGame.h"
 #include "ActorCheckpointSaveGame.generated.h"
 

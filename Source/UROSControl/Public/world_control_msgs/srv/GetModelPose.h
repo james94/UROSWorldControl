@@ -36,7 +36,7 @@ public:
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			Id = JsonObject->GetStringField("id");
+			Id = JsonObject->GetStringField(TEXT("id"));
 		}
 
 		static Request GetFromJson(TSharedPtr<FJsonObject> JsonObject)
@@ -89,8 +89,8 @@ public:
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			Success = JsonObject->GetBoolField("success");
-			Pose.FromJson(JsonObject->GetObjectField("pose"));
+			Success = JsonObject->GetBoolField(TEXT("success"));
+			Pose.FromJson(JsonObject->GetObjectField(TEXT("pose")));
 		}
 
 		static Response GetFromJson(TSharedPtr<FJsonObject> JsonObject)

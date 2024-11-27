@@ -75,14 +75,14 @@ namespace world_control_msgs
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			XMotion = JsonObject->GetNumberField("x_motion");
-			YMotion = JsonObject->GetNumberField("y_motion");
-			ZMotion = JsonObject->GetNumberField("z_motion");
-			Limit = JsonObject->GetNumberField("limit");
-			UseAdvanced = JsonObject->GetBoolField("use_advanced");
-			SoftConstraint = JsonObject->GetBoolField("soft_constraint");
-			Stiffness = JsonObject->GetNumberField("stiffness");
-			Damping = JsonObject->GetNumberField("damping");
+			XMotion = JsonObject->GetNumberField(TEXT("x_motion"));
+			YMotion = JsonObject->GetNumberField(TEXT("y_motion"));
+			ZMotion = JsonObject->GetNumberField(TEXT("z_motion"));
+			Limit = JsonObject->GetNumberField(TEXT("limit"));
+			UseAdvanced = JsonObject->GetBoolField(TEXT("use_advanced"));
+			SoftConstraint = JsonObject->GetBoolField(TEXT("soft_constraint"));
+			Stiffness = JsonObject->GetNumberField(TEXT("stiffness"));
+			Damping = JsonObject->GetNumberField(TEXT("damping"));
 		}
 
 		static LinearLimits GetFromJson(TSharedPtr<FJsonObject> JsonObject)

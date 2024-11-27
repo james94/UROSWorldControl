@@ -47,7 +47,7 @@ public:
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			Id = JsonObject->GetStringField("id");
+			Id = JsonObject->GetStringField(TEXT("id"));
 			MaterialNames.Empty();
 			TArray<TSharedPtr<FJsonValue>> MaterialNamesPtrArray = JsonObject->GetArrayField(TEXT("material_names"));
 			for (auto &ptr : MaterialNamesPtrArray)
@@ -126,7 +126,7 @@ public:
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			Success = JsonObject->GetBoolField("success");
+			Success = JsonObject->GetBoolField(TEXT("success"));
 		}
 
 		static Response GetFromJson(TSharedPtr<FJsonObject> JsonObject)

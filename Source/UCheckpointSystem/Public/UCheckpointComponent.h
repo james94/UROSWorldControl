@@ -8,6 +8,8 @@
 #include "Components/ActorComponent.h"
 #include "CheckpointHandler.h"
 #include "CheckpointEventBroadcaster.h"
+#include "CheckpointGameInstance.h"
+#include "Kismet/GameplayStatics.h"
 #include "UCheckpointComponent.generated.h"
 
 

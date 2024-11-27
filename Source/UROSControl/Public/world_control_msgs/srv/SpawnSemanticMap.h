@@ -168,7 +168,7 @@ public:
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			Success = JsonObject->GetBoolField("success");
+			Success = JsonObject->GetBoolField(TEXT("success"));
 			FailedModelIds.Empty();
 			TArray<TSharedPtr<FJsonValue>> FailedModelIdsPtrArray = JsonObject->GetArrayField(TEXT("failed_model_ids"));
 			for (auto &ptr : FailedModelIdsPtrArray)

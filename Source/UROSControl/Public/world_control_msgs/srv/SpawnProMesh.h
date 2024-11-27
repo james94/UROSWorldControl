@@ -93,11 +93,11 @@ class UROSBRIDGE_API FROSSpawnProMeshSrv : public FROSBridgeSrv
 
                 virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
                 {
-                    Height=JsonObject->GetNumberField("height");
-                    Width=JsonObject->GetNumberField("width");
-                    Depth=JsonObject->GetNumberField("depth");
-                    Pose.FromJson(JsonObject->GetObjectField("pose"));
-                    Id = JsonObject->GetStringField("id");
+                    Height=JsonObject->GetNumberField(TEXT("height"));
+                    Width=JsonObject->GetNumberField(TEXT("width"));
+                    Depth=JsonObject->GetNumberField(TEXT("depth"));
+                    Pose.FromJson(JsonObject->GetObjectField(TEXT("pose")));
+                    Id = JsonObject->GetStringField(TEXT("id"));
                     Tags.Empty();
                     TArray<TSharedPtr<FJsonValue>> TagsPtrArray = JsonObject->GetArrayField(TEXT("tags"));
                     for (auto &ptr : TagsPtrArray)
@@ -106,9 +106,9 @@ class UROSBRIDGE_API FROSSpawnProMeshSrv : public FROSBridgeSrv
                         Entry.FromJson(ptr->AsObject());
                         Tags.Add(Entry);
                     }
-                    ActorLabel = JsonObject->GetStringField("actor_label");
-                    PhysicsProperties.FromJson(JsonObject->GetObjectField("physics_properties"));
-                    ParentId = JsonObject->GetStringField("parent_id");
+                    ActorLabel = JsonObject->GetStringField(TEXT("actor_label"));
+                    PhysicsProperties.FromJson(JsonObject->GetObjectField(TEXT("physics_properties")));
+                    ParentId = JsonObject->GetStringField(TEXT("parent_id"));
                 }
 
                 static Request GetFromJson(TSharedPtr<FJsonObject> JsonObject)
@@ -189,9 +189,9 @@ class UROSBRIDGE_API FROSSpawnProMeshSrv : public FROSBridgeSrv
 
                 virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
                 {
-                    Id = JsonObject->GetStringField("id");
-                    Name = JsonObject->GetStringField("Name");
-                    Success = JsonObject->GetBoolField("success");
+                    Id = JsonObject->GetStringField(TEXT("id"));
+                    Name = JsonObject->GetStringField(TEXT("Name"));
+                    Success = JsonObject->GetBoolField(TEXT("success"));
                 }
 
                 static Response GetFromJson(TSharedPtr<FJsonObject> JsonObject)

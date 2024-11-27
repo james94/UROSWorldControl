@@ -3,9 +3,9 @@
 #include "Engine/World.h"
 #include "GameFramework/Actor.h"
 #include "Engine/StaticMesh.h"
+#include "Engine/StaticMeshActor.h"
+#include "PhysicsEngine/PhysicsConstraintComponent.h"
 #include "AssetUtils.generated.h"
-
-
 
 UCLASS()
 class UWORLDCONTROL_API UAssetUtils: public UObject

@@ -86,9 +86,9 @@ namespace world_control_msgs
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			Name = JsonObject->GetStringField("name");
-			Pose.FromJson(JsonObject->GetObjectField("pose"));
-			Id = JsonObject->GetStringField("id");
+			Name = JsonObject->GetStringField(TEXT("name"));
+			Pose.FromJson(JsonObject->GetObjectField(TEXT("pose")));
+			Id = JsonObject->GetStringField(TEXT("id"));
 			Tags.Empty();
 			TArray<TSharedPtr<FJsonValue>> TagsPtrArray = JsonObject->GetArrayField(TEXT("tags"));
 			for (auto &ptr : TagsPtrArray)
@@ -98,8 +98,8 @@ namespace world_control_msgs
 				Tags.Add(Entry);
 			}
 
-			Path = JsonObject->GetStringField("path");
-			PhysicsProperties.FromJson(JsonObject->GetObjectField("physics_properties"));
+			Path = JsonObject->GetStringField(TEXT("path"));
+			PhysicsProperties.FromJson(JsonObject->GetObjectField(TEXT("physics_properties")));
 			MaterialNames.Empty();
 			TArray<TSharedPtr<FJsonValue>> MaterialNamesPtrArray = JsonObject->GetArrayField(TEXT("material_names"));
 			for (auto &ptr : MaterialNamesPtrArray)

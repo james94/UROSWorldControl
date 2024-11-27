@@ -40,7 +40,7 @@ public:
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			ConstraintDescription.FromJson(JsonObject->GetObjectField("constraint_description"));
+			ConstraintDescription.FromJson(JsonObject->GetObjectField(TEXT("constraint_description")));
 		}
 
 		static Request GetFromJson(TSharedPtr<FJsonObject> JsonObject)
@@ -85,7 +85,7 @@ public:
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			Success = JsonObject->GetBoolField("success");
+			Success = JsonObject->GetBoolField(TEXT("success"));
 		}
 
 		static Response GetFromJson(TSharedPtr<FJsonObject> JsonObject)

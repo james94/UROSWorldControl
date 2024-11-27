@@ -120,20 +120,20 @@ namespace world_control_msgs
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			Swing1Motion = JsonObject->GetNumberField("swing_1_motion");
-			Swing2Motion = JsonObject->GetNumberField("swing_2_motion");
-			TwistMotion = JsonObject->GetNumberField("twist_motion");
-			Swing1LimitAngle = JsonObject->GetNumberField("swing_1_limit_angle");
-			Swing2LimitAngle = JsonObject->GetNumberField("swing_2_limit_angle");
-			TwistLimitAngle = JsonObject->GetNumberField("twist_limit_angle");
-			AngularRoationOffset.FromJson(JsonObject->GetObjectField("angular_roation_offset"));
-			UseAdvanced = JsonObject->GetBoolField("use_advanced");
-			SwingSoftConstraint = JsonObject->GetBoolField("swing_soft_constraint");
-			SwingStiffness = JsonObject->GetNumberField("swing_stiffness");
-			SwingDamping = JsonObject->GetNumberField("swing_damping");
-			TwistSoftConstraint = JsonObject->GetBoolField("twist_soft_constraint");
-			TwistStiffness = JsonObject->GetNumberField("twist_stiffness");
-			TwistDamping = JsonObject->GetNumberField("twist_damping");
+			Swing1Motion = JsonObject->GetNumberField(TEXT("swing_1_motion"));
+			Swing2Motion = JsonObject->GetNumberField(TEXT("swing_2_motion"));
+			TwistMotion = JsonObject->GetNumberField(TEXT("twist_motion"));
+			Swing1LimitAngle = JsonObject->GetNumberField(TEXT("swing_1_limit_angle"));
+			Swing2LimitAngle = JsonObject->GetNumberField(TEXT("swing_2_limit_angle"));
+			TwistLimitAngle = JsonObject->GetNumberField(TEXT("twist_limit_angle"));
+			AngularRoationOffset.FromJson(JsonObject->GetObjectField(TEXT("angular_roation_offset")));
+			UseAdvanced = JsonObject->GetBoolField(TEXT("use_advanced"));
+			SwingSoftConstraint = JsonObject->GetBoolField(TEXT("swing_soft_constraint"));
+			SwingStiffness = JsonObject->GetNumberField(TEXT("swing_stiffness"));
+			SwingDamping = JsonObject->GetNumberField(TEXT("swing_damping"));
+			TwistSoftConstraint = JsonObject->GetBoolField(TEXT("twist_soft_constraint"));
+			TwistStiffness = JsonObject->GetNumberField(TEXT("twist_stiffness"));
+			TwistDamping = JsonObject->GetNumberField(TEXT("twist_damping"));
 		}
 
 		static AngularLimits GetFromJson(TSharedPtr<FJsonObject> JsonObject)

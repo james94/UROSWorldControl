@@ -53,10 +53,10 @@ public:
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			type_to_delete = JsonObject->GetStringField("type_to_delete");
-			key_to_delete = JsonObject->GetStringField("key_to_delete");
-			value_to_delete = JsonObject->GetStringField("value_to_delete");
-			ignore_value = JsonObject->GetBoolField("ignore_value");
+			type_to_delete = JsonObject->GetStringField(TEXT("type_to_delete"));
+			key_to_delete = JsonObject->GetStringField(TEXT("key_to_delete"));
+			value_to_delete = JsonObject->GetStringField(TEXT("value_to_delete"));
+			ignore_value = JsonObject->GetBoolField(TEXT("ignore_value"));
 		}
 
 		static Request GetFromJson(TSharedPtr<FJsonObject> JsonObject)
@@ -103,7 +103,7 @@ public:
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			Success = JsonObject->GetBoolField("success");
+			Success = JsonObject->GetBoolField(TEXT("success"));
 		}
 
 		static Response GetFromJson(TSharedPtr<FJsonObject> JsonObject)

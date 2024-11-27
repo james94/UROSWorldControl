@@ -4,6 +4,8 @@
 #include "Engine/StaticMeshActor.h"
 #include "BoundingBox.h"
 #include "AssetUtils.h"
+#include "CollisionQueryParams.h"
+#include "Engine/OverlapResult.h"
 #if WITH_EDITOR
 #include "WorldControlSettings.h"
 #include "Engine/EngineTypes.h"

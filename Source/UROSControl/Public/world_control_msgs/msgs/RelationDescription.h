@@ -33,8 +33,8 @@ namespace world_control_msgs
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			ParentId = JsonObject->GetStringField("parent_id");
-			ChildId = JsonObject->GetStringField("child_id");
+			ParentId = JsonObject->GetStringField(TEXT("parent_id"));
+			ChildId = JsonObject->GetStringField(TEXT("child_id"));
 		}
 
 		static RelationDescription GetFromJson(TSharedPtr<FJsonObject> JsonObject)

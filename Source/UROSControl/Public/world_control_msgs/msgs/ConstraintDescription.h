@@ -42,9 +42,9 @@ namespace world_control_msgs
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			Id = JsonObject->GetStringField("id");
-			ConstraintDetails.FromJson(JsonObject->GetObjectField("constraint_details"));
-			Pose.FromJson(JsonObject->GetObjectField("pose"));
+			Id = JsonObject->GetStringField(TEXT("id"));
+			ConstraintDetails.FromJson(JsonObject->GetObjectField(TEXT("constraint_details")));
+			Pose.FromJson(JsonObject->GetObjectField(TEXT("pose")));
 		}
 
 		static ConstraintDescription GetFromJson(TSharedPtr<FJsonObject> JsonObject)

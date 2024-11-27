@@ -113,9 +113,9 @@ public:
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			Name = JsonObject->GetStringField("name");
-			Pose.FromJson(JsonObject->GetObjectField("pose"));
-			Id = JsonObject->GetStringField("id");
+			Name = JsonObject->GetStringField(TEXT("name"));
+			Pose.FromJson(JsonObject->GetObjectField(TEXT("pose")));
+			Id = JsonObject->GetStringField(TEXT("id"));
 			Tags.Empty();
 			TArray<TSharedPtr<FJsonValue>> TagsPtrArray = JsonObject->GetArrayField(TEXT("tags"));
 			for (auto &ptr : TagsPtrArray)
@@ -125,10 +125,10 @@ public:
 				Tags.Add(Entry);
 			}
 
-			Path = JsonObject->GetStringField("path");
-			ActorLabel = JsonObject->GetStringField("actor_label");
-			OverrideName = JsonObject->GetStringField("override_name");
-			PhysicsProperties.FromJson(JsonObject->GetObjectField("physics_properties"));
+			Path = JsonObject->GetStringField(TEXT("path"));
+			ActorLabel = JsonObject->GetStringField(TEXT("actor_label"));
+			OverrideName = JsonObject->GetStringField(TEXT("override_name"));
+			PhysicsProperties.FromJson(JsonObject->GetObjectField(TEXT("physics_properties")));
 			MaterialNames.Empty();
 			TArray<TSharedPtr<FJsonValue>> MaterialNamesPtrArray = JsonObject->GetArrayField(TEXT("material_names"));
 			for (auto &ptr : MaterialNamesPtrArray)
@@ -145,8 +145,8 @@ public:
 				MaterialPaths.Add(Entry);
 			}
 
-			ParentId = JsonObject->GetStringField("parent_id");
-			bSpawnCollisionCheck = JsonObject->GetBoolField("spawn_collision_check");
+			ParentId = JsonObject->GetStringField(TEXT("parent_id"));
+			bSpawnCollisionCheck = JsonObject->GetBoolField(TEXT("spawn_collision_check"));
 		}
 
 		static Request GetFromJson(TSharedPtr<FJsonObject> JsonObject)
@@ -255,10 +255,10 @@ public:
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			Id = JsonObject->GetStringField("id");
-			Name = JsonObject->GetStringField("name");
-			ErrType = JsonObject->GetStringField("etype");
-			Success = JsonObject->GetBoolField("success");
+			Id = JsonObject->GetStringField(TEXT("id"));
+			Name = JsonObject->GetStringField(TEXT("name"));
+			ErrType = JsonObject->GetStringField(TEXT("etype"));
+			Success = JsonObject->GetBoolField(TEXT("success"));
 		}
 
 		static Response GetFromJson(TSharedPtr<FJsonObject> JsonObject)

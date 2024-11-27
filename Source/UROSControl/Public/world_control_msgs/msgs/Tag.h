@@ -39,9 +39,9 @@ namespace world_control_msgs
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			Type = JsonObject->GetStringField("type");
-			Key = JsonObject->GetStringField("key");
-			Value = JsonObject->GetStringField("value");
+			Type = JsonObject->GetStringField(TEXT("type"));
+			Key = JsonObject->GetStringField(TEXT("key"));
+			Value = JsonObject->GetStringField(TEXT("value"));
 		}
 
 		static Tag GetFromJson(TSharedPtr<FJsonObject> JsonObject)

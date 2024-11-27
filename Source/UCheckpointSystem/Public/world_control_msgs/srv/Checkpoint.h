@@ -39,8 +39,8 @@ public:
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			Command = JsonObject->GetStringField("command");
-			Args = JsonObject->GetStringField("args");
+			Command = JsonObject->GetStringField(TEXT("command"));
+			Args = JsonObject->GetStringField(TEXT("args"));
 		}
 
 		static Request GetFromJson(TSharedPtr<FJsonObject> JsonObject)
@@ -85,7 +85,7 @@ public:
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			Success = JsonObject->GetBoolField("success");
+			Success = JsonObject->GetBoolField(TEXT("success"));
 		}
 
 		static Response GetFromJson(TSharedPtr<FJsonObject> JsonObject)

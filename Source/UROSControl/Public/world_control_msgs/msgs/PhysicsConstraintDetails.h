@@ -83,15 +83,15 @@ namespace world_control_msgs
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			IdFirstModel = JsonObject->GetStringField("id_first_model");
-			IdSecondModel = JsonObject->GetStringField("id_second_model");
-			DisableCollision = JsonObject->GetBoolField("disable_collision");
-			EnableProjection = JsonObject->GetBoolField("enable_projection");
-			ProjectionLinearTolerance = JsonObject->GetNumberField("projection_linear_tolerance");
-			ProjectionAngularTolerance = JsonObject->GetNumberField("projection_angular_tolerance");
-			ParentDominates = JsonObject->GetBoolField("parent_dominates");
-			LinearLimits.FromJson(JsonObject->GetObjectField("linear_limits"));
-			AngularLimits.FromJson(JsonObject->GetObjectField("angular_limits"));
+			IdFirstModel = JsonObject->GetStringField(TEXT("id_first_model"));
+			IdSecondModel = JsonObject->GetStringField(TEXT("id_second_model"));
+			DisableCollision = JsonObject->GetBoolField(TEXT("disable_collision"));
+			EnableProjection = JsonObject->GetBoolField(TEXT("enable_projection"));
+			ProjectionLinearTolerance = JsonObject->GetNumberField(TEXT("projection_linear_tolerance"));
+			ProjectionAngularTolerance = JsonObject->GetNumberField(TEXT("projection_angular_tolerance"));
+			ParentDominates = JsonObject->GetBoolField(TEXT("parent_dominates"));
+			LinearLimits.FromJson(JsonObject->GetObjectField(TEXT("linear_limits")));
+			AngularLimits.FromJson(JsonObject->GetObjectField(TEXT("angular_limits")));
 		}
 
 		static PhysicsConstraintDetails GetFromJson(TSharedPtr<FJsonObject> JsonObject)

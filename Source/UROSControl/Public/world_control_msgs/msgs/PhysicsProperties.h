@@ -68,10 +68,10 @@ namespace world_control_msgs
 
 		virtual void FromJson(TSharedPtr<FJsonObject> JsonObject) override
 		{
-			Mobility = JsonObject->GetNumberField("mobility");
-			Gravity = JsonObject->GetBoolField("gravity");
-			GenerateOverlapEvents = JsonObject->GetBoolField("generate_overlap_events");
-			Mass = JsonObject->GetNumberField("mass");
+			Mobility = JsonObject->GetNumberField(TEXT("mobility"));
+			Gravity = JsonObject->GetBoolField(TEXT("gravity"));
+			GenerateOverlapEvents = JsonObject->GetBoolField(TEXT("generate_overlap_events"));
+			Mass = JsonObject->GetNumberField(TEXT("mass"));
 		}
 
 		static PhysicsProperties GetFromJson(TSharedPtr<FJsonObject> JsonObject)

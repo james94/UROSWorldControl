@@ -18,6 +18,11 @@ struct FWorldStateInformation
 {
   GENERATED_BODY()
 
+  FWorldStateInformation() 
+    : Pose(FTransform::Identity),
+      LinearVel(FVector::ZeroVector),
+      AngularVel(FVector::ZeroVector) {}
+
   UPROPERTY(EditAnywhere)
   FTransform Pose;
 
